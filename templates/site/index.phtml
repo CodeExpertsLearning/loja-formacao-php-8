@@ -1,0 +1,7 @@
+<ul>
+    <?php foreach($products->getAll() as $p):?>
+    <li>
+        Produto: <?=$p->name;?>, R$ <?=$p->price;?>
+    </li>
+    <?php endforeach;?>
+</ul>
