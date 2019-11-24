@@ -3,6 +3,7 @@ namespace Controller;
 
 use Model\Product;
 use Database\Connection;
+use View\View;
 
 class HomeController
 {
@@ -10,6 +11,6 @@ class HomeController
     {
         $products = new Product(Connection::getInstance());
 
-        require TEMPLATES . '/site/index.phtml';
+        return View::render('site/index', compact('products'));
     }
 }

@@ -1,7 +1,21 @@
-<ul>
+<?php require TEMPLATES . '/site/includes/header.phtml';?>
+<div class="row">
     <?php foreach($products->getAll() as $p):?>
-    <li>
-        Produto: <?=$p->name;?>, R$ <?=$p->price;?>
-    </li>
+    <div class="card col-4">
+        <img src="https://via.placeholder.com/640x480.png?text=loja_php" alt="" class="card-img-top">
+        <div class="card-body">
+        
+            <h2 class="card-title">
+                <?=$p->name;?>
+            </h2>
+
+            <h3 class="card-text">
+                R$ <?=number_format($p->price, 2, ',', '.');?>
+            </h3>
+
+            <a href="<?=HOME;?>/product/show/<?=$p->id;?>" class="btn btn-success">Ver Produto</a>
+        </div>
+    </div>
     <?php endforeach;?>
-</ul>
+</div>
+<?php require TEMPLATES . '/site/includes/footer.phtml';?>

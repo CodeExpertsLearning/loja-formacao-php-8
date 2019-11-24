@@ -1,0 +1,31 @@
+<?php require TEMPLATES . '/site/includes/header.phtml';?>
+<div class="row">
+    <div class="col-6">
+        <img src="https://via.placeholder.com/640x480.png?text=loja_php" alt="" class="img-fluid">
+    </div>
+    
+    <div class="col-6">
+        
+        <h2><?=$product->name;?></h2>
+        <p>
+            <?=$product->content;?>
+        </p>
+        <h4>R$ <?=number_format($product->price, 2, ',', '.');?></h4>
+
+        <form action="<?=HOME;?>/cart/add" method="post">
+
+            <input type="hidden" name="product[id]" value="<?=$product->id;?>">
+            <input type="hidden" name="product[name]" value="<?=$product->name;?>">
+            <input type="hidden" name="product[price]" value="<?=$product->price;?>">
+            
+            <p>
+                <label>Quantidade:</label>
+                
+                <input type="number" name="product[qtd]" value="1">
+            </p>
+
+            <button type="submit" class="btn btn-danger btn-lg">Comprar</a>
+        </form>
+    </div>
+</div>
+<?php require TEMPLATES . '/site/includes/footer.phtml';?>
