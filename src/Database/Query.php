@@ -21,6 +21,8 @@ class Query
         $sql .= ' VALUES(' . $binds . ', NOW(), NOW())';
 
         $this->execute($sql, $data);
+
+        return $this->connection->lastInsertId();
     }
 
     public function getAll($fields = '*')

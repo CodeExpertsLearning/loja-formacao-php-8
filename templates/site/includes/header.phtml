@@ -23,11 +23,11 @@
 
     <div class="float-right">
          <a href="<?=HOME;?>/cart">
-            <?php //if(\Session\Session::has('cart')): ?>
+            <?php if(\Session\Session::has('cart')): ?>
                 <span class="badge badge-danger">
-                        <?php //count(\Session\Session::get('cart'));?>
+                        <?=count(\Session\Session::get('cart'));?>
                 </span>
-            <?php //endif;?>
+            <?php endif;?>
             <i class="fa fa-shopping-cart fa-2x"></i>
         </a>
     </div>
